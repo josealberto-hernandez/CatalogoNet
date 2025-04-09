@@ -35,7 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.ApplyMigration();
-
+await app.SeedCatalogoProdcut();
 app.MapControllers();
 
 app.Run();
