@@ -1,27 +1,26 @@
-﻿using Catalogo.Domain.Products;
+using Catalogo.Application.Dtos;
+using Catalogo.Domain.Products;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Catalogo.Application.Products.SearchProducts
+namespace Catalogo.Application.Products.SearchProducts;
+
+internal sealed class SearchProductQueryHandler
+: IRequestHandler<SearchProductQuery, ProductDTO>
 {
-    internal sealed class SearchProductQueryHandler : IRequestHandler<SearchProductQuery, Product>
+    private readonly IProductRepository _productRepository;
+
+    public SearchProductQueryHandler(IProductRepository productRepository)
     {
-        private readonly IProductRepository _productRepository;
+        _productRepository = productRepository;
+    }
 
-        public SearchProductQueryHandler(IProductRepository productRepository)
-        {
-            _productRepository = productRepository;
-        }
+    public async Task<ProductDTO> Handle(
+        SearchProductQuery request, 
+        CancellationToken cancellationToken
+    )
+    {
+        var product = await _productRepository.GetByCode(request.Code!, cancellationToken);
 
-        public async Task<Product> Handle(SearchProductQuery request, CancellationToken cancellationToken)
-        {
-            var product = await _productRepository.GetByCode(request.Code!, cancellationToken);
-
-            return product!;
-        }
+        return product!.ToDTO(request.Context!);
     }
 }

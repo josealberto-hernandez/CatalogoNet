@@ -1,9 +1,6 @@
 using MediatR;
 
-namespace Catalogo.Domain.Abstractions
-{
-    public interface IDomainEvent : INotification   
-    {
-                
-    }
-}
+namespace Catalogo.Domain.Abstractions;
+
+public interface IDomainEvent : INotification
+{}

@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace Catalogo.Domain.Categories;
 
-namespace Catalogo.Domain.Categories
+public interface ICategoryRepository
 {
-    public interface ICategoryRepository
-    {
-        Task<List<Category>> GetAll(CancellationToken cancellationToken);
-
-        void Add(Category category);
-
-        Task<Category?> GetByIdAsync(Guid id, CancellationToken cancellationToken);
-    }
+    Task<List<Category>> GetAll(CancellationToken cancellationToken);
+    void Add(Category category);
+    Task<Category?> GetByIdAsync(Guid id, CancellationToken cancellationToken);
 }

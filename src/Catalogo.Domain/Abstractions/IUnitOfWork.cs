@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace Catalogo.Domain.Abstractions;
 
-namespace Catalogo.Domain.Abstractions
+public interface IUnitOfWork
 {
-    public interface IUnitOfWork
-    {
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-    }
+
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+
 }

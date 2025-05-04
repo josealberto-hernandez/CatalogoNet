@@ -20,4 +20,17 @@
     <ProjectReference Include="..\Catalogo.Infrastructure\Catalogo.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\img_1.jpg" />
+    <None Include="wwwroot\Images\img_10.jpg" />
+    <None Include="wwwroot\Images\img_2.jpg" />
+    <None Include="wwwroot\Images\img_3.jpg" />
+    <None Include="wwwroot\Images\img_4.jpg" />
+    <None Include="wwwroot\Images\img_5.jpg" />
+    <None Include="wwwroot\Images\img_6.jpg" />
+    <None Include="wwwroot\Images\img_7.jpg" />
+    <None Include="wwwroot\Images\img_8.jpg" />
+    <None Include="wwwroot\Images\img_9.jpg" />
+  </ItemGroup>
+
 </Project>
