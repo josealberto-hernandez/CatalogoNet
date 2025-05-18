@@ -7,3 +7,10 @@ Accept: application/json
 
 GET {{ Catalogo.Api_HostAddress }}/api/products
 Accept: application/json
+
+###
+
+GET {{ Catalogo.Api_HostAddress }}/api/products/code/TEST01
+Accept: application/json
+
+###

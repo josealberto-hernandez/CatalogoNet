@@ -21,6 +21,6 @@ internal sealed class SearchProductQueryHandler
     {
         var product = await _productRepository.GetByCode(request.Code!, cancellationToken);
 
-        return product!.ToDTO(request.Context!);
+        return product is null ? null! : product!.ToDTO(request.Context!);
     }
 }
